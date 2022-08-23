@@ -1,5 +1,7 @@
 # ooen-downloader
 
+[![GitHub license](https://img.shields.io/github/license/franznemeth/ooen-downloader?style=flat-square)](https://github.com/franznemeth/ooen-downloader/blob/main/LICENSE)
+
 Automatic downloader for Oberösterreichische Nachrichten Epaper Newspaper.
 
 ## Introduction

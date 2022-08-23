@@ -1,5 +1,6 @@
 # ooen-downloader
 
+[![Build](https://github.com/franznemeth/ooen-downloader/actions/workflows/main.yaml/badge.svg?branch=main)](https://github.com/franznemeth/ooen-downloader/actions/workflows/main.yaml)
 [![GitHub license](https://img.shields.io/github/license/franznemeth/ooen-downloader?style=flat-square)](https://github.com/franznemeth/ooen-downloader/blob/main/LICENSE)
 
 Automatic downloader for Oberösterreichische Nachrichten Epaper Newspaper.

@@ -12,7 +12,7 @@ It requires and [active subscription](https://shop.nachrichten.at/shop/) of OÖN
 
 ## Requirements
 
-- python 3.10
+- python 3.9
 - pip
 - Selenium python bindings
 - firefox web browser
@@ -41,7 +41,7 @@ podman run -it --rm \
   -e OOEN_USERNAME=<username or email> \
   -e OOEN_PASSWORD=<password> \ 
   --name ooen-downloader \
-  ghcr.io/<TODO>
+  ghcr.io/franznemeth/ooen-downloader:v0.0.2
 ```
 
-If you want to run this as a scheduled job in kubernetes see the examples in `/deploy`.
+If you want to run this as a scheduled job in kubernetes see the examples in `/deploy/kubernetes`.

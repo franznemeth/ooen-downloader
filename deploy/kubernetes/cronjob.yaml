@@ -1,0 +1,46 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: ooen-downloader
+spec:
+  schedule: "0 6 * * 1-6"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: ooen-downloader
+              image: ghcr.io/franznemeth/ooen-downloader:v0.0.2
+              imagePullPolicy: IfNotPresent
+              env:
+                - name: OOEN_USERNAME
+                  valueFrom:
+                    secretKeyRef:
+                      key: ooen-username
+                      name: ooen-credentials
+                - name: OOEN_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      key: ooen-password
+                      name: ooen-credentials
+                - name: OOEN_DOWNLOAD_DIR
+                  value: /ooen
+                - name: DEBUG
+                  value: "False"
+              volumeMounts:
+                - mountPath: /ooen
+                  name: ooen-downloads
+          volumes:
+            - name: ooen-downloads
+              hostPath:
+                path: /some/path
+          restartPolicy: OnFailure
+---
+apiVersion: v1
+kind: Secret
+type: Opaque
+data:
+  ooen-password:
+  ooen-username:
+metadata:
+  name: ooen-credentials

@@ -37,7 +37,7 @@ Then you just have to set the environment variables and run `python3 ./main.py`.
 To run this in a container you can get started using the following command:
 ```bash
 podman run -it --rm \
-  -v `pwd`/ooen:/opt/scrutiny/config \
+  -v `pwd`/ooen:/download \
   -e OOEN_USERNAME=<username or email> \
   -e OOEN_PASSWORD=<password> \ 
   --name ooen-downloader \
